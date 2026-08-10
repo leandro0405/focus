@@ -1,3 +1,7 @@
+/* ==============================
+   CONFIGURAÇÕES GERAIS
+================================= */
+
 * {
     margin: 0;
     padding: 0;
@@ -16,8 +20,14 @@ body {
     font-family: Arial, Helvetica, sans-serif;
 }
 
+
+/* ==============================
+   TELA PRINCIPAL
+================================= */
+
 .hero {
     position: relative;
+
     width: 100vw;
     height: 100vh;
 
@@ -28,24 +38,42 @@ body {
     overflow: hidden;
 }
 
+
+/* ==============================
+   IMAGEM DE FUNDO
+================================= */
+
 .background {
     position: absolute;
-    inset: -20px;
 
-    background-image: url("background.jpg");
+    top: -20px;
+    right: -20px;
+    bottom: -20px;
+    left: -20px;
+
+    background-image: url("richard-brutyo-Sg3XwuEpybU-unsplash.jpg");
+
     background-position: center;
     background-size: cover;
     background-repeat: no-repeat;
 
-    filter: blur(7px);
-
     transform: scale(1.05);
 
+    filter: blur(7px);
+
     animation: backgroundFocus 9.5s ease-in-out infinite;
+
+    will-change: filter, transform;
 }
+
+
+/* ==============================
+   TEXTO FOCUS
+================================= */
 
 .title {
     position: relative;
+
     z-index: 2;
 
     width: 100%;
@@ -59,7 +87,9 @@ body {
 }
 
 h1 {
-    color: white;
+    color: #ffffff;
+
+    font-family: Arial, Helvetica, sans-serif;
 
     font-size: clamp(4.5rem, 10.8vw, 9rem);
 
@@ -72,62 +102,116 @@ h1 {
     text-align: center;
 
     animation: textFocus 9.5s ease-in-out infinite;
+
+    will-change: filter, transform;
 }
 
 
-/* ANIMAÇÃO DO FUNDO */
+/* ==============================
+   ANIMAÇÃO DA IMAGEM
+================================= */
 
 @keyframes backgroundFocus {
 
-    0%,
+    /* Começa desfocada */
+
+    0% {
+        filter: blur(7px);
+    }
+
     12% {
         filter: blur(7px);
     }
 
-    38%,
-    48% {
-        filter: blur(0);
+
+    /* Fica nítida */
+
+    38% {
+        filter: blur(0px);
     }
 
-    66%,
+    48% {
+        filter: blur(0px);
+    }
+
+
+    /* Volta a desfocar */
+
+    66% {
+        filter: blur(7px);
+    }
+
     77% {
         filter: blur(7px);
     }
 
-    91%,
+
+    /* Termina nítida */
+
+    91% {
+        filter: blur(0px);
+    }
+
     100% {
-        filter: blur(0);
+        filter: blur(0px);
     }
 }
 
 
-/* ANIMAÇÃO DO TEXTO */
+/* ==============================
+   ANIMAÇÃO DO TEXTO
+================================= */
 
 @keyframes textFocus {
 
-    0%,
-    12% {
-        filter: blur(0);
+    /* Texto começa nítido */
+
+    0% {
+        filter: blur(0px);
     }
 
-    38%,
+    12% {
+        filter: blur(0px);
+    }
+
+
+    /* Texto fica desfocado */
+
+    38% {
+        filter: blur(7px);
+    }
+
     48% {
         filter: blur(7px);
     }
 
-    66%,
+
+    /* Continua desfocado */
+
+    66% {
+        filter: blur(7px);
+    }
+
     77% {
         filter: blur(7px);
     }
 
-    91%,
+
+    /* Texto volta a ficar nítido */
+
+    91% {
+        filter: blur(0px);
+    }
+
     100% {
-        filter: blur(0);
+        filter: blur(0px);
     }
 }
 
 
-/* CELULAR */
+/* ==============================
+   CELULAR
+================================= */
 
 @media (max-width: 600px) {
 
